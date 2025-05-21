@@ -1,0 +1,20 @@
+{
+  "CFBundleShortVersionString": "1.0",
+  "CFBundleIdentifier": "org.littlekitune.xfwder",
+  "CFBundleIconFile": "AppIcon",
+  "CFBundleName": "XFwder",
+  "CFBundleInfoDictionaryVersion": "6.0",
+  "CFBundleSignature": "????",
+  "CFBundleExecutable": "XFwder",
+  "CFBundlePackageType": "APPL",
+  "CFBundleURLTypes": [
+    {
+      "CFBundleURLName": "org.littlekitune.xfwder",
+      "CFBundleURLSchemes": [
+        "xfwder"
+      ],
+      "CFBundleURLRole": "Viewer"
+    }
+  ],
+  "LSUIElement": true
+}

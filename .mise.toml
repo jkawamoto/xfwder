@@ -1,0 +1,30 @@
+[env]
+_.python.venv = ".venv"
+
+[vars]
+cmd_name = "XFwder"
+build_dir = "build"
+
+[tasks.clean]
+description = "Clean workspace"
+run = [
+    "rm -rf {{vars.build_dir}}/*",
+]
+
+[tasks.build]
+description = "Build Application bundle"
+alias = "b"
+depends = ["clean"]
+run = [
+    "mkdir -p {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/MacOS {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Resources",
+    "go build -o {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/MacOS/{{vars.cmd_name}} -ldflags \"-X 'main.CmdName={{vars.cmd_name}}'\"",
+    "plutil -convert binary1 info.json -o {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Info.plist"
+]
+
+[tasks.example]
+depends = ["build"]
+run = "uv run example.py"
+
+[tasks.logs]
+description = "Read the log file"
+run = "cat ~/Library/Logs/{{vars.cmd_name}}/{{vars.cmd_name}}.log"
