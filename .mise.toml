@@ -5,6 +5,14 @@ _.python.venv = ".venv"
 cmd_name = "XFwder"
 build_dir = "build"
 
+[tasks.install-dev-tools]
+description = "Install dev tools"
+run = "uv pip install pre-commit-uv"
+
+[tasks.pre-commit]
+description = "Run pre-commit with uv"
+run = "uv run pre-commit"
+
 [tasks.clean]
 description = "Clean workspace"
 run = [

@@ -6,7 +6,7 @@ xfwder is a tool that helps with passing data via custom URLs in macOS. It acts 
 
 The xfwder tool translates custom URL requests into HTTP requests over UNIX domain sockets:
 
-- A request to `xfwder://uds_file/path?queries` 
+- A request to `xfwder://uds_file/path?queries`
 - Gets forwarded as a POST request to `http+unix:/tmp/uds_file.sock/path?queries`
 
 ## License
