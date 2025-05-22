@@ -21,6 +21,12 @@ run = [
     "plutil -convert binary1 info.json -o {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Info.plist"
 ]
 
+[tasks.package]
+description = "Create a ZIP archive of the application bundle"
+depends = ["build"]
+run = "zip -r {{vars.cmd_name}}.zip {{vars.cmd_name}}.app"
+dir = "{{vars.build_dir}}"
+
 [tasks.example]
 depends = ["build"]
 run = "uv run example.py"
