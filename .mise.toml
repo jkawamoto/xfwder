@@ -4,6 +4,7 @@ _.python.venv = ".venv"
 [vars]
 cmd_name = "XFwder"
 build_dir = "build"
+version = "v0.1.0"
 
 [tasks.install-dev-tools]
 description = "Install dev tools"
@@ -26,7 +27,8 @@ depends = ["clean"]
 run = [
     "mkdir -p {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/MacOS {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Resources",
     "go build -o {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/MacOS/{{vars.cmd_name}} -ldflags \"-X 'main.CmdName={{vars.cmd_name}}'\"",
-    "plutil -convert binary1 info.json -o {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Info.plist"
+    "plutil -convert binary1 info.json -o {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Info.plist",
+    "echo \"{{vars.version}}\" > {{vars.build_dir}}/{{vars.cmd_name}}.app/Contents/Resources/version"
 ]
 
 [tasks.package]
