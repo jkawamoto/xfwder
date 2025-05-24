@@ -1,4 +1,4 @@
-module github.com/jkawamoto/xprxy
+module github.com/jkawamoto/xfwder
 
 go 1.24.3
 
