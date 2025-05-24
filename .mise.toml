@@ -32,9 +32,9 @@ run = [
 ]
 
 [tasks.package]
-description = "Create a ZIP archive of the application bundle"
+description = "Create a Tarball archive of the application bundle"
 depends = ["build"]
-run = "zip -r {{vars.cmd_name}}.zip {{vars.cmd_name}}.app"
+run = "tar -czvf {{vars.cmd_name}}.tar.gz {{vars.cmd_name}}.app"
 dir = "{{vars.build_dir}}"
 
 [tasks.example]
