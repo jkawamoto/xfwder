@@ -11,8 +11,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/progrium/darwinkit/macos/appkit"
-	"github.com/progrium/darwinkit/macos/foundation"
 	"io"
 	"log/slog"
 	"net"
@@ -22,6 +20,9 @@ import (
 	"path/filepath"
 	"runtime"
 	"time"
+
+	"github.com/progrium/darwinkit/macos/appkit"
+	"github.com/progrium/darwinkit/macos/foundation"
 )
 
 var CmdName = "xfwder"
