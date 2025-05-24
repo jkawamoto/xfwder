@@ -1,4 +1,5 @@
 # xfwder
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 xfwder is a tool that helps with passing data via custom URLs in macOS. It acts as a bridge between custom URL schemes and applications by forwarding data received through custom URLs to applications via UNIX domain sockets.
 
